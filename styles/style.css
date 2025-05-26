@@ -1,0 +1,176 @@
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+  
+}
+
+body {
+    min-width: 375px;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+  }
+
+  header{
+    grid-area: header;
+    height: fit-content;
+  }
+  #Begruessung{
+    grid-area: Begruessung;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+  }
+
+.header_menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    background: black;
+    border-radius: 1em;
+    height: auto;
+  }
+  .header_menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  .header_menu a i {
+    margin-right: 0.5rem;
+    color: olive;
+  }
+
+  #burger_menu {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    display: block; /* Standardmäßig ausblenden */
+  }
+
+  #nav_links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  #nav_links.show {
+    display: flex;
+  }
+
+  #container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "content"
+    ;
+    gap: 10px;
+   
+}
+#content{
+    grid-area: content;
+    display: grid;
+    grid-template-areas: 
+        "Begruessung"
+        "block_1"
+        "block_2"
+        "block_3"
+        "block_4"
+    ;
+    background: url(../image/il_fullxfull.2561336987_e0gu.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 10px;
+}
+
+[class^="block"] {
+    text-align: center;
+    align-content: center;
+    border-radius: 8px;
+    height: 100px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 2rem;
+}
+
+.block_1{
+    grid-area: block_1;
+    background-color: blue;
+}
+.block_2{
+    grid-area: block_2;
+    background-color: beige;
+}
+
+.block_3{
+    grid-area: block_3;
+    background-color: yellow;
+}
+
+.block_4{
+    grid-area: block_4;
+    background-color: red;
+}
+
+
+
+
+  
+  
+  @media screen and (min-width: 768px) {
+        
+    #content{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "Begruessung Begruessung"
+            "block_1 block_2"
+            "block_3 block_4"
+            
+        ;
+       
+    }
+
+  
+  .header_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    height: 50px;
+    background: black;
+    border-radius: 1em;
+  }
+  
+  
+ 
+  
+  #burger_menu {
+    display: none; /* Standardmäßig ausblenden */
+  }
+  
+  /* Desktop-Navigation */
+  #nav_links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+
+
+  }
+  
